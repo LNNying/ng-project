@@ -1,0 +1,58 @@
+<style>
+  header{
+    text-align: center;
+  }
+  .header{
+    font-size: 12px;
+  }
+  .card-body{
+    padding: 1.5px;
+    font-size: 10px;
+    color: rgba(60, 0, 85, 0.48);
+    height: 100%;
+  }
+  .card{
+    height: 100%;
+  }
+  .box{
+    margin-bottom: 5px;
+    height: 150px;
+  }
+  .content{
+    width: 100%;
+    padding: 2px 4px 2px 4px;
+    height: 106px;
+    /*多行文本超出省略*/
+    overflow: hidden;
+    word-break:break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+  }
+  .star{
+    border-top: 1px solid #eeeeee;
+    margin-top: 3px;
+  }
+  .star:hover{
+    cursor: pointer;
+  }
+</style>
+
+<header>
+  内容展示区域
+</header>
+
+<div class="row" style="margin-top: 5px;">
+  <div class="col-md-4 box" *ngFor="let item of content">
+    <div class="card">
+      <div class="card-body">
+        <div class="header"><a [href]="item.url">{{item.title}}</a></div>
+        <div class="content">{{item.content}}</div>
+        <div class="star">
+          <i *ngFor="let star of item.starNum" [class]="star" (click)="starClick(item, star)"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

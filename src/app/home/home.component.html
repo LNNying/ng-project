@@ -1,0 +1,8 @@
+<p>{{title}}</p>
+<button (click)="onclickBtn()">点击</button>
+<input [value]="name" (input)="name=$event.target.value" />
+<p>{{name}}</p>
+<li *ngFor="let student of students">{{student.name}} --- {{student.age}}</li>
+<app-card [name]="name" (soonOutput)="receive($event)"></app-card>
+<p>{{outSoonMsg}}</p>
+<div class="container-fluid">adad</div>

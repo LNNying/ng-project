@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { ExtraOptions,  Routes, RouterModule } from '@angular/router';
+import {HomeComponent} from './home/home.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'prodect',
+    component: HomeComponent
+  }
+];
 
+const config: ExtraOptions = {
+  useHash: true,
+};
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, config)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
